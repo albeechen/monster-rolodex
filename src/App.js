@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 
 import { CardList } from './components/card-list/card-list.component';
+import { SerachBox } from './components/search-box/search-box.component';
 import './App.css';
 
 class App extends Component {
@@ -29,11 +30,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input 
-          type='search' 
+        <h1>Monster Rolodex</h1>
+        <SerachBox 
           placeholder='search monster'
-          onChange={ e => {this.setState({searchField: e.target.value})}}>
-        </input>
+          handlechange={ e => {this.setState({searchField: e.target.value})}}
+        />
         <CardList monsters={filteredMonsters} />
       </div>
     );
